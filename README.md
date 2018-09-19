@@ -4,7 +4,7 @@
 ## 1. 流程
 ### 1.1 数据库备份
 - 到这里<https://github.com/moxuanyuan/ServerBackup/> 下载所需要文件**Mysqldump.php** , **index.php** , **.htaccess** , **sample.cfg**。
-- 在服务器根目录新建目录"DBbackup"，将**Mysqldump.php**  , **index.php** , **.htaccess**上传到"DBbackup"。
+- 在项目服务器根目录新建目录"DBbackup"，将**Mysqldump.php**  , **index.php** , **.htaccess**上传到"DBbackup"。
 - 编辑**index.php**，设定好access_key，修改数据库参数。
 - 假设服务器domain为yourdomain.com，打开<http://yourdomain.com/DBbackup?access_key=******> 。
 - 检查是否在目录"DBbackup"生成了**db_xxxx-xx-xx.sql.gz**，如果是则备份数据库功能正常。
