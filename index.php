@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 use Ifsnop\Mysqldump as IMysqldump;
 
 /* access_key用作简单的访问控制 */
-$access_key='91279893';
+$access_key='';
 /* 数据库参数 */
 $dbname='';
 $db_user='';
