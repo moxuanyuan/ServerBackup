@@ -9,7 +9,7 @@ $dbname='';
 $db_user='';
 $db_password='';
 
-$filename='db_'.date('Y-m-d');
+$filename='db_'.$dbname.'_'.date('Y-m-d');
 if(isset($_GET['access_key']) && $_GET['access_key']==$access_key)
 {
     include_once(dirname(__FILE__) . "/Mysqldump.php"); 
