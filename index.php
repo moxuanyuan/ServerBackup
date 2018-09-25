@@ -18,9 +18,7 @@ $filename='db_'.$dbname.'_'.date('Y-m-d');
 if(isset($_GET['access_key']) && $_GET['access_key']==$access_key)
 {
     $directory=dirname(__FILE__);
-
-    include_once($directory."/Mysqldump.php"); 
-
+    
     $scanned_directory = array_diff(scandir($directory), array('..', '.'));
 
     $nowtime=time();
@@ -36,8 +34,10 @@ if(isset($_GET['access_key']) && $_GET['access_key']==$access_key)
                unlink($filepath); 
             }
         }
-    } 
+    }
 
+    include_once($directory."/Mysqldump.php"); 
+    
     $dumpSettings = array( 
         'compress' => IMysqldump\Mysqldump::GZIP,
         'add-drop-table'=>true
