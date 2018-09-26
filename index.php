@@ -6,7 +6,7 @@ use Ifsnop\Mysqldump as IMysqldump;
 /* access_key用作简单的访问控制 */
 $access_key='';
 
-/* 备份保留天数，整数，默认15天*/
+/* 备份保留天数，整数，默认15天 */
 $backup_keep_day=15;
 
 /* 数据库参数 */
