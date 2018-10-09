@@ -14,9 +14,13 @@ $db_user='';
 $db_password='';
 $db_name='';
 
+
 /* 以下非必要参数 */
+
+#$db_host='';
+
 /* 数据库发生错误时，重试次数，当数据库很大备份时出现错误，可以设置更大的重试次数 */
-//$query_retries = 20;
+#$query_retries = 20;
 
 /* 只需要备份的Tables */
 //$include_tables=array();
@@ -49,16 +53,15 @@ if(isset($_GET['access_key']) && $_GET['access_key']==$access_key)
     include_once($directory."/dumper.php");
 
     try{
-        $setting=array(
-            'host' => '',
+        $setting=array( 
             'username' => $db_user,
             'password' => $db_password,
             'db_name' => $db_name
         );
 
-        foreach(array('query_retries','include_tables','exclude_tables') as $v)
+        foreach(array('db_host','query_retries','include_tables','exclude_tables') as $v)
         {
-            isset($$v) && ($setting[$v]=$$v);
+            !empty($$v) && ($setting[$v]=$$v);
         }
 
         $world_dumper = Shuttle_Dumper::create($setting);  
