@@ -365,7 +365,7 @@ class Shuttle_Dumper_Native extends Shuttle_Dumper {
 }
 
 class Shuttle_DBConn {
-	public $host;
+	public $host = 'localhost';
 	public $username;
 	public $password;
 	public $name;
@@ -379,15 +379,15 @@ class Shuttle_DBConn {
 	protected $connection;
 
 	function __construct($options) {
-		$this->host = $options['host'];
-		if (empty($this->host)) {
-			$this->host = '127.0.0.1';
-		}
+
 		$this->username = $options['username'];
 		$this->password = $options['password'];
 		$this->name = $options['db_name'];
 
-		(isset($options['query_retries'])) && ($this->query_retries = (int)$options['query_retries'] );
+
+		(!empty($options['db_host'])) && ($this->host =  $options['db_host'] );
+		
+		(!empty($options['query_retries'])) && ($this->query_retries = (int)$options['query_retries'] );
 	}
 
 	static function create($options) {
